@@ -91,6 +91,11 @@ do
                 {
                     Console.WriteLine("El tipo de produccion es baja ");
                 }
+                else
+                {
+                    Console.WriteLine("El tipo de ´produccion es media o baja ");
+                }
+                // 
                     break;
             }
         case 2:
