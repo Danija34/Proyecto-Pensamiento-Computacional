@@ -1,10 +1,11 @@
 ﻿int horario = 0;
 int opcion;
-int tipo;
+string tipodeimpacto;
 int edad = 0;
 int duracion = 0;
 int cumplereglas = 0;
 string produccion;
+int programado = 0;
 do
 {
     Console.WriteLine("MENU.Opciones:Opciones");
@@ -93,9 +94,26 @@ do
                 }
                 else
                 {
-                    Console.WriteLine("El tipo de ´produccion es media o baja ");
+                    Console.WriteLine("El tipo de produccion es media o baja ");
                 }
-                // 
+                // Clasificacion de impacto
+                if (produccion== "Produccion Alta" || duracion >120 ||  programado >=20 && programado <=23)
+                {
+                    tipodeimpacto = "Impacto Alto";
+                }
+                else if (produccion=="Produccion Media" || duracion >= 60 && duracion <= 120)
+                {
+                    tipodeimpacto = "Impacto Medio";
+                }
+                else if (produccion == "Produccion Baja" || duracion < 60)
+                {
+                    tipodeimpacto = "Impacto Bajo";
+                }
+                else
+                {
+                    tipodeimpacto = "Rechazado";
+                }
+               
                     break;
             }
         case 2:
