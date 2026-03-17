@@ -1,11 +1,14 @@
 ﻿int horario = 0;
 int opcion;
-string tipodeimpacto;
+string tipodeimpacto = "";
+string decisionfinal = "";
 int edad = 0;
 int duracion = 0;
-int cumplereglas = 0;
-string produccion;
+int cumplereglas;
+string produccion;  string razon = "";
 int programado = 0;
+bool cumpleReglasTecnicas = false;
+int contadorpublicados = 0;   int contadorrechazados = 0;    int contadorrevision = 0;
 do
 {
     Console.WriteLine("MENU.Opciones:Opciones");
@@ -113,12 +116,38 @@ do
                 {
                     tipodeimpacto = "Rechazado";
                 }
-               
+                // Desicion Final
+                if (!cumpleReglasTecnicas)
+                {
+                    decisionfinal = "Rechazar";
+                    contadorrechazados++;
+                    razon = "Incumple regla tecnica obligatoria";
+                }
+                else if(tipodeimpacto=="Impacto Alto")
+                {
+                    decisionfinal = "Enviar a revision";
+                    contadorrevision++;
+                    razon = "Si cumple las reglas tecnicas pero su impacto es Alto";
+                }
+                else if(tipodeimpacto== "Impacto Medio" ||produccion=="Impacto Bajo")
+                {
+                    decisionfinal = "Publicar";
+                    contadorpublicados++;
+                        razon = "Cumple todas las reglas tecnicas y su impacto es adecuado";
+                }
+                else
+                {
+                    decisionfinal = "Publicar con ajustes";
+                    razon = "Modificacion menor en horarios o duracion";
+                }
+                Console.WriteLine($"Resultado: {decisionfinal}");
+                Console.WriteLine($"Razon : {razon}");
                     break;
             }
         case 2:
             {
-
+                Console.WriteLine("Resumen de Procesos");
+                Console.WriteLine("Total")
                 break;
             }
     }
