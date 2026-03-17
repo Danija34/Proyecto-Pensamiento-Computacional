@@ -147,7 +147,7 @@ do
         case 2:
             {
                 Console.WriteLine("Resumen de Procesos");
-                Console.WriteLine("Total")
+                Console.WriteLine($"Total Publicados : {contadorpublicados}");
                 break;
             }
     }
