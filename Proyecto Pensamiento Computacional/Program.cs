@@ -8,7 +8,8 @@ int cumplereglas;
 string produccion;  string razon = "";
 int programado = 0;
 bool cumpleReglasTecnicas = false;
-int contadorpublicados = 0;   int contadorrechazados = 0;    int contadorrevision = 0;
+int contadorpublicados = 0;   int contadorrechazados = 0;    int contadorrevision = 0; int totalevaluados = 0;
+int contadorbajo = 0; int contadormeedio = 0; int contadoralto = 0;
 do
 {
     Console.WriteLine("MENU.Opciones:Opciones");
@@ -146,8 +147,49 @@ do
             }
         case 2:
             {
+                Console.Clear();
+                Console.WriteLine(" Reglas Obligatoriosas del sistema: ");
+                Console.WriteLine("Numero 1. REGLAS DE CLASIFICACION Y HORARIO ");
+                Console.WriteLine("Todo Publico: Cualquier Hora del Dia");
+                Console.WriteLine("+13 Permitido entre las 6:00 y 22:00 horas");
+                Console.WriteLine("+18 Permitido entre las 22:00 y 5:00 horas");
+                Console.WriteLine("Numero 2. RANGOS DE DURACION PERMITIDOS");
+                Console.WriteLine("Pelicula: 60 a 180 minutos");
+                Console.WriteLine("Serie: 20 a 90 minutos");
+                Console.WriteLine("Documental: 30 a 120 minutos");
+                Console.WriteLine("Evento en vivo: 30 a 240 minutos");
+                Console.WriteLine("Numero 3. REGLAS DE NIVEL DE PRODUCCIÓN");
+                Console.WriteLine("Produccion baja: Solo para todo publico o +13");
+                Console.WriteLine("Produccion Media / Alta: Cualquier Clasificacion");
+                Console.WriteLine("Numero 4. CRITERIOS DE DESICIÓN");
+                Console.WriteLine("Publicar: cumple tecnica y impacto bajo/medio");
+                Console.WriteLine("Revision: Cumple tecnica pero impacto Alto");
+                Console.WriteLine("Rechazar: Incumple Reglas");
+                Console.ReadKey();
+                break;
+            }
+        case 3:
+            {
                 Console.WriteLine("Resumen de Procesos");
                 Console.WriteLine($"Total Publicados : {contadorpublicados}");
+                Console.WriteLine($"Total en Revision {contadorrevision}");
+                Console.WriteLine($"Total Rechazados{contadorrechazados}");
+                Console.WriteLine("");
+                break;
+            }
+        case 4:
+            {
+
+                break;
+            }
+        case 5:
+            {
+                Console.WriteLine("Saliendo...");
+                break;
+            }
+        default:
+            {
+                Console.WriteLine("Opcion Invalida");
                 break;
             }
     }
